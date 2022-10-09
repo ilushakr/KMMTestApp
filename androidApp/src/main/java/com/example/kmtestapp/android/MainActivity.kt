@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -15,6 +16,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
 
@@ -56,7 +58,11 @@ class MainActivity : ComponentActivity() {
             }
 
             when {
-                state.data != null -> Text(text = state.data.toString())
+                state.data != null -> {
+                    state.data!!.forEach {
+                        Text(text = it.toString(), modifier = Modifier.padding(vertical = 8.dp, horizontal = 16.dp))
+                    }
+                }
                 state.pending == true -> Text(text = "pending")
                 state.error != null -> Text(text = state.error!!.message.toString())
             }
