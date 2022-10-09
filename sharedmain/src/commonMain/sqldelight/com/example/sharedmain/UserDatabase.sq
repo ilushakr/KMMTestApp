@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS UserEntity (
+id INTEGER PRIMARY KEY,
+name TEXT NOT NULL
+);
+
+insertUser:
+INSERT OR IGNORE INTO UserEntity(id, name)
+VALUES(?, ?);
+
+removeAllUsers:
+DELETE FROM UserEntity;
+
+selectUserByName:
+SELECT * FROM UserEntity
+WHERE name = ?;
+
+selectUserById:
+SELECT * FROM UserEntity
+WHERE id = ?;
+
+selectAllUsers:
+SELECT * FROM UserEntity;

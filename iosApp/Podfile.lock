@@ -1,0 +1,16 @@
+PODS:
+  - sharedbase (1.0)
+
+DEPENDENCIES:
+  - sharedbase (from `../sharedbase`)
+
+EXTERNAL SOURCES:
+  sharedbase:
+    :path: "../sharedbase"
+
+SPEC CHECKSUMS:
+  sharedbase: 8d29afc98a8728bc65b6c72d697741de56efff8f
+
+PODFILE CHECKSUM: 0f6d24b91fe6a92f0f7a52f2f7881f3d7a0f3a9c
+
+COCOAPODS: 1.11.3
